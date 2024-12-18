@@ -1,0 +1,13 @@
+.container__login{
+    width: 527px;
+    height: 424px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+ }
+ .content__login{
+    width: 501px;
+    height: 396px;
+    background-color: #fff;
+ }
