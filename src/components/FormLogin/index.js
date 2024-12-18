@@ -22,7 +22,7 @@ export default function FormLogin() {
       const rs = await apiUser.apiLogin(payload);
       if (rs.success) {
         setPayload({ email: "", password: "" });
-        navigate("/home",);
+        navigate("/home");
         localStorage.setItem("accessToken", rs.accessToken);
         localStorage.setItem("name", rs.userData.name);
         localStorage.setItem("refreshToken", rs.userData.refreshToken);
