@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <div
-        className="bg-gradient-to-r from-blue-500 to-cyan-500  "
+        className="bg-gradient-to-r from-green-500 to-emerald-500  "
         style={{
           height: "calc(100vh)",
         }}
