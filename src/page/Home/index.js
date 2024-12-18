@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 
 export default function Home() {
+  const userName = localStorage.getItem("name")
+  const image = localStorage.getItem("image")
   return (
     <>
       <div
@@ -30,11 +32,11 @@ export default function Home() {
         <div className="w-full flex justify-between  ">
           <div className="w-full ml-4">
             <h1 className="font-bold text-xl text-white">Xin chào</h1>
-            <h1 className="font-bold text-xl text-white">Nguyễn Thanh Khoa</h1>
+            <h1 className="font-bold text-xl text-white">{userName}</h1>
           </div>
           <div className="avatar mt-2 mr-4">
             <div className="size-9 rounded-full">
-              <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+              <img src={image} alt="" />
             </div>
           </div>
         </div>
