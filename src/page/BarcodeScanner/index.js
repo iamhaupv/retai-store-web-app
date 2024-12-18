@@ -111,27 +111,27 @@ const BarcodeScanner = () => {
             </p>
             <div className="w-full flex">
               <div className="avatar">
-                <div className="w-24 rounded">
+                <div className="size-20 rounded">
                   <img src={product?.product?.images[0]} alt="Avatar sản phẩm" />
                 </div>
               </div>
               <div className="w-2/3 ml-1">
-                <h1 className="font-bold text-lg flex mt-2">
+                <h1 className="font-bold text-lg flex mt-2 whitespace-nowrap">
                   Mã sản phẩm: <h1 className="ml-1">{product?.product?.id}</h1>
                 </h1>
-                <h1 className="font-bold text-lg flex mt-2">
-                  Tên sản phẩm: <h1 className="ml-1">{product?.product?.title}</h1>
+                <h1 className="font-bold text-lg flex mt-2 whitespace-nowrap">
+                  Tên sản phẩm: <h1 className="ml-1 text-ellipsis w-5">{product?.product?.title}</h1>
                 </h1>
-                <h1 className="font-bold text-lg flex mt-2">
-                  Mã Phiếu: <h1 className="ml-1">{product?.receipt?.idPNK}</h1>
+                <h1 className="font-bold text-lg flex mt-2 whitespace-nowrap">
+                  Mã Phiếu: <h1 className="ml-1 ">{product?.receipt?.idPNK}</h1>
                 </h1>
-                <h1 className="font-bold text-lg flex mt-2">
+                <h1 className="font-bold text-lg flex mt-2 whitespace-nowrap">
                   Tên nhà cung cấp: <h1 className="ml-1">{product?.product?.brand?.name}</h1>
                 </h1>
-                <h1 className="font-bold text-lg flex mt-2">
+                <h1 className="font-bold text-lg flex mt-2 whitespace-nowrap">
                   Tên loại: <h1 className="ml-1">{product?.product?.category?.name}</h1>
                 </h1>
-                <h1 className="font-bold text-lg flex mt-2">
+                <h1 className="font-bold text-lg flex mt-2 whitespace-nowrap">
                   Hạn sử dụng:
                   <h1 className="font-bold text-lg ml-1">
                     {formatDate(product?.receipt?.products[0]?.expires)}
