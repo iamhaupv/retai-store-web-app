@@ -38,8 +38,8 @@ const BarcodeScanner = () => {
 
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);
-    const day = String(date.getDate()).padStart(2, '0');  
-    const month = String(date.getMonth() + 1).padStart(2, '0'); 
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
     const year = date.getFullYear();
     return `${day}/${month}/${year}`;
   };
@@ -61,7 +61,7 @@ const BarcodeScanner = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex justify-center items-center p-4">
+    <div className="min-h-screen bg-gray-100 flex justify-center items-center p-4 overflow-hidden">
       <Link to="/home">
         <button className="fixed btn btn-circle bg-gray-200 left-3 top-2">
           <svg
@@ -72,7 +72,11 @@ const BarcodeScanner = () => {
             stroke="currentColor"
             className="size-6"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
           </svg>
         </button>
       </Link>
@@ -94,18 +98,19 @@ const BarcodeScanner = () => {
                 }
               }}
             />
-            <p className="mt-4 text-gray-500">Hướng camera tới mã vạch để quét.</p>
+            <p className="mt-4 text-gray-500">
+              Hướng camera tới mã vạch để quét.
+            </p>
           </div>
         ) : (
           <div className="w-full min-h-screen bg-gray-100 p-4">
-            <h3 className="text-xl font-bold text-gray-800">Thông tin sản phẩm</h3>
+            <h3 className="text-xl font-bold text-gray-800">
+              Thông tin sản phẩm
+            </h3>
             <p className="mt-2 text-sm text-gray-600">
               Mã vạch: <span className="font-semibold">{barcode}</span>
             </p>
-
-            {/* Grid container */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-              {/* Product Image */}
               <div className="w-full sm:w-1/3 flex justify-center">
                 <div className="w-32 h-32 rounded-lg overflow-hidden">
                   <img
@@ -120,33 +125,52 @@ const BarcodeScanner = () => {
               <div className="sm:col-span-2">
                 <div className="space-y-3">
                   <div className="flex">
-                    <span className="font-bold w-32 text-left">Mã sản phẩm:</span>
-                    <span className="text-gray-700">{product?.product?.id}</span>
+                    <span className="font-bold w-32 text-left">
+                      Mã sản phẩm:
+                    </span>
+                    <span className="text-gray-700">
+                      {product?.product?.id}
+                    </span>
                   </div>
                   <div className="flex">
-                    <span className="font-bold w-32 text-left">Tên sản phẩm:</span>
-                    <span className="text-gray-700">{product?.product?.title}</span>
+                    <span className="font-bold w-32 text-left">
+                      Tên sản phẩm:
+                    </span>
+                    <span className="text-gray-700">
+                      {product?.product?.title}
+                    </span>
                   </div>
                   <div className="flex">
                     <span className="font-bold w-32 text-left">Mã Phiếu:</span>
-                    <span className="text-gray-700">{product?.receipt?.idPNK}</span>
+                    <span className="text-gray-700">
+                      {product?.receipt?.idPNK}
+                    </span>
                   </div>
                   <div className="flex">
-                    <span className="font-bold w-32 text-left">Tên nhà cung cấp:</span>
-                    <span className="text-gray-700">{product?.product?.brand?.name}</span>
+                    <span className="font-bold w-32 text-left">
+                      Tên nhà cung cấp:
+                    </span>
+                    <span className="text-gray-700">
+                      {product?.product?.brand?.name}
+                    </span>
                   </div>
                   <div className="flex">
                     <span className="font-bold w-32 text-left">Tên loại:</span>
-                    <span className="text-gray-700">{product?.product?.category?.name}</span>
+                    <span className="text-gray-700">
+                      {product?.product?.category?.name}
+                    </span>
                   </div>
                   <div className="flex">
-                    <span className="font-bold w-32 text-left">Hạn sử dụng:</span>
-                    <span className="text-gray-700">{formatDate(product?.receipt?.products[0]?.expires)}</span>
+                    <span className="font-bold w-32 text-left">
+                      Hạn sử dụng:
+                    </span>
+                    <span className="text-gray-700">
+                      {formatDate(product?.receipt?.products[0]?.expires)}
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
-
             <button
               className="mt-4 bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
               onClick={() => setIsScanning(true)} // Reset để tiếp tục quét
