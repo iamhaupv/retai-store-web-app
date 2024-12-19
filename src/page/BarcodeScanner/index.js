@@ -25,9 +25,9 @@ const BarcodeScanner = () => {
 
   useEffect(() => {
     if (!isScanning && barcode) {
-      fetchInforProduct(); // Gọi fetchInforProduct mỗi khi quét thành công
+      fetchInforProduct();
     }
-  }, [isScanning, barcode]); // Hook chỉ chạy khi isScanning hoặc barcode thay đổi
+  }, [isScanning, barcode]);
 
   const splitString = (str) => {
     const [MaSP, MaPhieu, HSD] = str.split("-");
@@ -53,8 +53,8 @@ const BarcodeScanner = () => {
         token,
         { product: MaSP, receipt: MaPhieu }
       );
-
-      setProduct(response.item); // Cập nhật sản phẩm vào state
+      if (response.success) setProduct(response.item);
+      else setProduct([]);
     } catch (error) {
       console.log("fetch infor product is error", error);
     }
@@ -102,7 +102,7 @@ const BarcodeScanner = () => {
               Hướng camera tới mã vạch để quét.
             </p>
           </div>
-        ) : (
+        ) : product && Object.keys(product).length > 0 ? (
           <div className="w-full min-h-screen bg-gray-100 p-4">
             <h3 className="text-xl font-bold text-gray-800">
               Thông tin sản phẩm
@@ -173,11 +173,21 @@ const BarcodeScanner = () => {
             </div>
             <button
               className="mt-4 bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
-              onClick={() => setIsScanning(true)} // Reset để tiếp tục quét
+              onClick={() => setIsScanning(true)}
             >
               Quét lại
             </button>
           </div>
+        ) : (
+          <>
+            Mã vạch không hợp lệ
+            <button
+              className="mt-4 bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
+              onClick={() => setIsScanning(true)}
+            >
+              Quét lại
+            </button>
+          </>
         )}
       </div>
     </div>
