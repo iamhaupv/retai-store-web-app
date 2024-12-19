@@ -53,7 +53,7 @@ export default function Home() {
         <div className="absolute bg-white h-full w-full rounded-3xl p-2">
           <div className="font-bold ml-2">Chức năng</div>
           <div className="flex w-full h-14 justify-center mt-4 gap-7">
-            <div className="w-20 flex  ">
+            {/* <div className="w-20 flex  ">
               <Link to="/calendar">
               <div>
                 <svg
@@ -73,7 +73,7 @@ export default function Home() {
                 <div className="">Xem lịch</div>
               </div>
               </Link>
-            </div>
+            </div> */}
             <div className="w-20 flex ">
               <Link to="/barcodeScanner">
               <div>
@@ -101,7 +101,7 @@ export default function Home() {
               </div>
               </Link>
             </div>
-            <div className="w-20 flex ">
+            {/* <div className="w-20 flex ">
               <Link to="/scan2InsertOrder">
               <div>
                 <svg
@@ -121,7 +121,7 @@ export default function Home() {
                 <div className="">Quét SP thanh toán</div>
               </div>
               </Link>
-            </div>
+            </div> */}
             <div className="w-20 flex ">
               <div>
                 <svg
@@ -130,7 +130,7 @@ export default function Home() {
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="size-8 bg-yellow-700 text-white rounded-lg ml-5"
+                  class="size-8 bg-orange-600 text-white rounded-lg ml-5"
                 >
                   <path
                     stroke-linecap="round"

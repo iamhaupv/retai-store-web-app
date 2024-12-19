@@ -125,7 +125,7 @@ const BarcodeScanner = () => {
               <div className="sm:col-span-2">
                 <div className="space-y-3">
                   <div className="flex">
-                    <span className="font-bold w-32 text-left">
+                    <span className="font-bold w-32 text-left whitespace-nowrap">
                       Mã sản phẩm:
                     </span>
                     <span className="text-gray-700">
@@ -133,7 +133,7 @@ const BarcodeScanner = () => {
                     </span>
                   </div>
                   <div className="flex">
-                    <span className="font-bold w-32 text-left">
+                    <span className="font-bold w-32 text-left whitespace-nowrap">
                       Tên sản phẩm:
                     </span>
                     <span className="text-gray-700">
@@ -141,13 +141,13 @@ const BarcodeScanner = () => {
                     </span>
                   </div>
                   <div className="flex">
-                    <span className="font-bold w-32 text-left">Mã Phiếu:</span>
+                    <span className="font-bold w-32 text-left whitespace-nowrap">Mã Phiếu:</span>
                     <span className="text-gray-700">
                       {product?.receipt?.idPNK}
                     </span>
                   </div>
                   <div className="flex">
-                    <span className="font-bold w-32 text-left">
+                    <span className="font-bold w-32 text-left whitespace-nowrap">
                       Tên nhà cung cấp:
                     </span>
                     <span className="text-gray-700">
@@ -155,13 +155,13 @@ const BarcodeScanner = () => {
                     </span>
                   </div>
                   <div className="flex">
-                    <span className="font-bold w-32 text-left">Tên loại:</span>
+                    <span className="font-bold w-32 text-left whitespace-nowrap">Tên loại:</span>
                     <span className="text-gray-700">
                       {product?.product?.category?.name}
                     </span>
                   </div>
                   <div className="flex">
-                    <span className="font-bold w-32 text-left">
+                    <span className="font-bold w-32 text-left whitespace-nowrap">
                       Hạn sử dụng:
                     </span>
                     <span className="text-gray-700">
