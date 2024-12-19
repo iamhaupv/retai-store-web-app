@@ -148,7 +148,7 @@ const BarcodeScanner = () => {
                   </div>
                   <div className="flex">
                     <span className="font-bold w-32 text-left whitespace-nowrap">
-                      Tên nhà cung cấp:
+                      Nhà cung cấp:
                     </span>
                     <span className="text-gray-700">
                       {product?.product?.brand?.name}
