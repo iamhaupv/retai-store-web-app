@@ -5,6 +5,7 @@ import Calendar from "../page/Calendar";
 import Home from "../page/Home";
 import Scan2InsertOrder from "../page/Scan2InsertOrder";
 import SignIn from "../page/SignIn";
+import Profile from "../page/Profile";
 
 export const routes = [
   {
@@ -16,4 +17,7 @@ export const routes = [
   { path: "/scan2InsertOrder", element: <Scan2InsertOrder />},
   { path: "/calendar", element: <Calendar />},
   { path: "/signin", element: <SignIn /> },
+  {
+    path: "/profile", element: <Profile/>
+  }
 ];

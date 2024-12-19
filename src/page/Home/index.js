@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import apiUser from "../../apis/apiUser";
 
 
 export default function Home() {
+  const [user, setUser] = useState("");
+  const fetchCurrentUser = async () => {
+    const token = localStorage.getItem("accessToken");
+    if (!token) throw new Error("Token is invalid!");
+    const currentUSer = await apiUser.apiGetCurrentUser(token);
+    setUser(currentUSer.rs);
+  };
+  useEffect(() => {
+    fetchCurrentUser();
+  }, [])
   return (
     <>
       <div
-        className="bg-gradient-to-r from-blue-500 to-cyan-500  "
+        className="bg-gradient-to-r from-green-500 to-emerald-500  "
         style={{
           height: "calc(100vh)",
         }}
@@ -30,11 +41,11 @@ export default function Home() {
         <div className="w-full flex justify-between  ">
           <div className="w-full ml-4">
             <h1 className="font-bold text-xl text-white">Xin chào</h1>
-            <h1 className="font-bold text-xl text-white">Nguyễn Thanh Khoa</h1>
+            <h1 className="font-bold text-xl text-white">{user?.employee?.name}</h1>
           </div>
           <div className="avatar mt-2 mr-4">
             <div className="size-9 rounded-full">
-              <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+              <img src={user?.employee?.images[0]} alt="" />
             </div>
           </div>
         </div>
@@ -127,7 +138,9 @@ export default function Home() {
                     d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
                   />
                 </svg>
+                <Link to={"/profile"}>
                 <div className="">Thông tin cá nhân</div>
+                </Link>
               </div>
             </div>
           </div>

@@ -55,14 +55,16 @@ export default function FormLogin() {
   return (
     <>
     <ToastContainer/>
-    <div className="max-w-screen-sm max-h-screen flex justify-items-center" style={{ backgroundColor: "#F5F5F5" }}>
+
+    <div className="max-w-screen-sm max-h-screen flex justify-items-center" 
+    style={{ backgroundColor: "#F5F5F5" }} >
       {/* <div className="container__login flex justify-center font-roboto border rounded-[44px]"> */}
         <div className="content__login flex justify-center items-center border rounded-[39px]">
           <div>
-            {isLogin ? <p className="font-bold text-[25px] mt-2 flex justify-center items-center">
+            {isLogin ? <p className="font-bold text-[30px] flex justify-center items-center mt-5">
               Đăng nhập
             </p>: <div className="flex items-center font-bold text-[25px]"> <button onClick={()=> setIsLogin(!isLogin)}><FontAwesomeIcon icon={faArrowLeft} /></button>
-            <p className="font-bold text-[30px] flex justify-center items-center">
+            <p className="font-bold text-[30px] flex justify-center items-center mt-5">
               <span className="ml-[62px]">Quên mật khẩu</span>
             </p></div>}
             {isLogin ? <div><label class="input input-bordered flex items-center gap-2 w-[370px] h-[45px] border rounded-[22px] mt-[20px]">
@@ -123,13 +125,14 @@ export default function FormLogin() {
               />
             </label></div>}
             <div className="flex justify-center">
-              {isLogin ? <button onClick={handleLogin} className="w-[260px] h-[50px] bg-[#19B563] border rounded-[30px] mt-[20px] mb-1">
+              {isLogin ? <button onClick={handleLogin} className="w-[260px] h-[40px] mb-2 bg-[#19B563] border rounded-[30px] mt-[16px]">
                 <span className="text-[#ffffff] font-bold">ĐĂNG NHẬP</span>
-              </button> : <button onClick={handleForgotPassword} className="w-[260px] h-[50px] bg-[#19B563] border rounded-[30px] mt-[20px] mb-1">
+              </button> : <button onClick={handleForgotPassword} className="w-[260px] h-[40px] mb-2 bg-[#19B563] border rounded-[30px] mt-[16px]">
                 <span className="text-[#ffffff] font-bold">GỬI YÊU CẦU</span>
               </button>}
             </div>
           </div>
+        {/* </div> */}
         </div>
       {/* </div> */}
       </div>
